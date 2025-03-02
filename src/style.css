@@ -22,10 +22,12 @@ html {
 }
 
 label {
-  font-size: 40px;
+  font-size: 20px;
+  justify-content: center;
+  display: flex;
   font-weight: 700;
-  margin-top: 3rem;
-  margin-bottom: 3rem;
+  margin-top: 2rem;
+  margin-bottom: 1rem;
 }
 
 h1 {
@@ -73,4 +75,22 @@ input::placeholder {
   outline: none;
   border-radius: 5px;
   text-transform: capitalize;
+}
+
+#display {
+  display: flex;
+  margin-top: 10px;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+#error-display {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  background-color: red;
+  font-family: 'Inter', serif;
 }

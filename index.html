@@ -11,23 +11,28 @@
 <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
   </head>
   <body>
+    <div>
+      <p id="error-display"></p>
+    </div>
     <div class="main-container">
       <h1>the cats app</h1>
       
      <div class="sections">
       <div>
-        <h3>number of cats facts (50 maximum)</h3>
-        
-          <input type="number" placeholder="number of cat facts (50 max)">
+          <form id="fact-form">
+          <label for="factInput">number of cats facts (50 maximum)</label>
+          <input type="number" id="factInput" placeholder="number of cat facts (50 max)">
           <button class="submit">submit</button>
+          </form>
         
       </div>
 
       <div>
-        <h3>number of cats photos(10 maximum)</h3>
-        
-          <input type="number" placeholder="number of cat photos (10 max)">
+        <form id="image-form">
+          <label for="">number of cats photos(10 maximum)</label>
+          <input type="number" id="imageInput" placeholder="number of cat photos (10 max)">
           <button class="submit">submit</button>
+        </form>
         
       </div>
      </div>
