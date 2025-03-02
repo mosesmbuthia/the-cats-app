@@ -5,16 +5,19 @@ const display = document.getElementById("display");
 const errorDisplay = document.getElementById("error-display");
 const imageForm = document.getElementById("image-form");
 const imageInput = document.getElementById("imageInput");
+const loading = document.getElementById("loading");
 
 factForm.addEventListener("submit", async (e) => {
     e.preventDefault();
     display.innerHTML = "";
     errorDisplay.textContent = ""; 
+    loading.style.display = "block";
 
     const limit = parseInt(factInput.value) || 1;
     
     if (limit < 1 || limit > 50) {
         errorDisplay.textContent = "There was an error. Please try again later";
+        loading.style.display = "none";
         return;
     }
 
@@ -28,9 +31,16 @@ factForm.addEventListener("submit", async (e) => {
         });
         listHTML += "</ol>";
 
-        display.innerHTML = listHTML;
+        setTimeout(() => {
+            display.innerHTML = listHTML;
+            loading.style.display = "none"; 
+        }, 2000);
+
+
+        // display.innerHTML = listHTML;
     } catch (error) {
         errorDisplay.textContent = "There was an error. Please try again later.";
+        loading.style.display = "none"
         console.error(error);
     }
 });
@@ -40,11 +50,13 @@ imageForm.addEventListener("submit", async (e) => {
     e.preventDefault();
     display.innerHTML = "";
     errorDisplay.textContent = ""; 
+    loading.style.display = "block";
 
     const limit = parseInt(imageInput.value) || 1;
 
     if (limit < 1 || limit > 10) {
         errorDisplay.textContent = "There was an error. Please try again later.";
+        loading.style.display = "none";
         return;
     }
 
@@ -60,9 +72,15 @@ imageForm.addEventListener("submit", async (e) => {
         });
         imagesHTML += "</div>";
 
-        display.innerHTML = imagesHTML;
+        setTimeout(() => {
+            display.innerHTML = imagesHTML;
+            loading.style.display = "none"; 
+        }, 2000);
+
+        // display.innerHTML = imagesHTML;
     } catch (error) {
         errorDisplay.textContent = "There was an error. Please try again later.";
+        loading.style.display = "none";
         console.error(error);
     }
 });

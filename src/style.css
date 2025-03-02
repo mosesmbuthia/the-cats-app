@@ -78,12 +78,36 @@ input::placeholder {
 }
 
 #display {
-  display: flex;
+  /* text-align: center; */
   margin-top: 10px;
-  flex-direction: column;
+}
+
+#display ol {
+  /* display: inline block; */
+  justify-items: center;
+  text-align: left;
+  /* margin: auto; */
+
+}
+
+.loading {
+  display: flex;
   align-items: center;
   justify-content: center;
+  border: 5px solid #f3f3f3;
+  border-top: 5px solid rgb(197,153,182);
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  animation: spin 1s linear infinite;
+  margin: 20px auto;
 }
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
 
 #error-display {
   display: flex;
